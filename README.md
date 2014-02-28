@@ -58,6 +58,10 @@ Your KEY is used to make your passwords truely unique. Someone else may use the 
 The password is also per-site so you can use the same passwords for multiple sites and each site will see it differently. 
 
 
+Installation
+============
+
+For down, download the .crx file from here and drag and drop it into Google Chrome.
 
 
 FAQ
