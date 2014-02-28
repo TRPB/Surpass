@@ -61,7 +61,7 @@ The password is also per-site so you can use the same passwords for multiple sit
 Installation
 ============
 
-For down, download the .crx file from here and drag and drop it into Google Chrome.
+For now, download the .crx file from /build/ and drag and drop it into Google Chrome.
 
 
 FAQ
