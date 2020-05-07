@@ -3,13 +3,14 @@
   "version": "0.1",
   "manifest_version": 2,
   "description": "Secure, unobtrusive, rapid password management",
-  "permissions": ["tabs"],
-  "background": { "scripts": ["jquery-1.7.2.min.js","jquery.sha256.js", "background.js" ] },
-  "options_page": "options.html",
-  "page_action": {
-     "default_name": "Surpass",
-      "default_icon": "icon-19.png"
+  "permissions": ["activeTab", "storage"],
+  "browser_action": {
+    "browser_style": true,
+    "default_icon": "icon-48.png",
+    "default_title": "Surpass",
+    "default_popup": "options.html"
   },
+
    "icons" : {
     "48" : "icon-48.png",
     "128" : "icon-128.png"
@@ -17,9 +18,21 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["jquery-1.7.2.min.js", "jquery.sha256.js", "content.js"],
-      "css": ["surpass.css"]
+      "js": ["content.js"]
     }
-   ] 
+   ],
+  "web_accessible_resources": [
+    "contentMain.js",
+    "sha256.js",
+    "icon-19.png",
+    "icon-disabled.png"
+  ],
+  "browser_specific_settings": {
+  "gecko": {
+    "id": "surpass@surpass.com",
+    "strict_min_version": "42.0"
+  }
+}
+
 }
 

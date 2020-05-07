@@ -1,9 +1,25 @@
 <html>
 <head>
-<script src="jquery-1.7.2.min.js"></script>
-<script src="jquery.sha256.js"></script>
-<script src="options.js"></script>
+	<meta charset="UTF-8" />
+<!-- 	
+<script src="hash.js"></script> -->
+<script src="options.js" type="module"></script> 
 
+<style>
+
+body  {
+	font-family: helvetica, arial, sans-serif;
+
+}
+form {
+	display: grid;
+	grid-template-columns: 50% 50%;
+}
+form input[type="button"], form hr, form p {
+	  grid-column: 1 / span 2 ;
+	  margin-top: 1em;
+}
+</style>
 
 </head>
 
@@ -12,24 +28,55 @@
 <div class="key">
 <p>Enter your key</p>
 
-<p>Your key is a master password used to make your generated passwords unique to YOU. You can use the password "1234" for facebook.com and facebook will see a totally different 
+<p>Your key is a master password used to make your generated passwords unique to YOU. You can use the password "1234" for facebook.com and facebook will see a totally different
 Password to that. In simple terms you can imagine it as a prefix to your password. If you set your key to "ABCD" and type in "1234" but facebook your password will really be "ABCD1234facebook.com"*.
  </p>
- 
+
 <p>You will need your Key if you use Surpass on a different browser or ever clear the settings for this extension. If you use two computers to access the internet,
 e.g. home and work, you should install Surpass on them both with the same key.</p>
 
 <form action="">
 	<input type="text" id="enteredkey" />
-	
+
 	<input id="savebutton" type="submit" name="save" value="Save Key" />
 </form>
 
 </div>
 <div class="main">
-	<p>Your key is currently set. To clear and reset your key, please click here.</p>
-	
-	<p>Please note: If you reset your key, you will need to reset you password on all websites using Surpass!</p>
+
+	<h2>Surpass</h2>
+	<hr />
+	<p>Your key is currently set. To clear and reset your key, please <a href="" id="reset">click here</a>.</p>
+
+	<p>Please note: If you reset your key, you will need to reset you password on all websites using Surpass.</p>
+
+
+	<hr />
+
+	<form>
+		<input type="checkbox" name="accountName" id="accountName" /> <label for="accountName">Auto-generate email address for catch-all domain?</label>
+
+		<p>With this option checked, it will pre-fill any box requiring an email address with [website]@example.org. E.g. logging into facebook will use facebook.com@example.org</p>
+
+		<label>Domain name to use for catch all? </label>
+		<input type="text" name="domain" id="domain">
+	</form>
+
+	<hr />
+	<h2>Display password</h2>
+	<p>This can be used to generate a password for copying/pasting for use outside of the browser (e.g. authing google in Thunderbird).</p>
+
+	<form>
+		<label>Account name:</label> <input type="text" name="domain" id="gendomain" / >
+
+		<label>Domain:</label> <input type="text" name="domain" id="gendomain" / >
+
+		<label>Password:</label> <input type="password" name="password" id="genpass" />
+		<input type="button" id="generate" value="Generate" />
+		<hr />
+		<label>Your generated password:</label>
+		<input id="generated" type="text" readonly />
+	</form>
 	
 	
 </div>
